@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Modeling Off-Axis Diffraction with the Least-Sampling Angular Spectrum Method</title>
+  <title>Learned Multi-aperture Color-coded Optics for Snapshot Hyperspectral Imaging</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -57,23 +57,29 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Modeling Off-Axis Diffraction with the Least-Sampling Angular Spectrum Method</h1>
+            <h1 class="title is-1 publication-title">Learned Multi-aperture Color-coded Optics for Snapshot Hyperspectral Imaging</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="https://whywww.github.io/" target="_blank">Haoyu Wei</a><sup>1,*</sup>,</span>
+                <a href="" target="_blank">Zheng Shi</a><sup>1,*</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=lOcrKM0AAAAJ&hl=en" target="_blank">Xin Liu</a><sup>1,2,*</sup>,</span>
+                <a href="" target="_blank">Xiong Dun</a><sup>2,*</sup>,</span>
               <span class="author-block">
-                <a href="https://www.haoxiang.ac.cn/" target="_blank">Xiang Hao</a><sup>2</sup>,</span>
+                <a href="https://whywww.github.io/" target="_blank">Haoyu Wei</a><sup>3</sup>,</span>
               <span class="author-block">
-                <a href="https://www.eee.hku.hk/~elam/" target="_blank">Edmund Y. Lam</a><sup>1</sup>,</span>
+                <a href="" target="_blank">Shiyu Dong</a><sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://www.eee.hku.hk/~evanpeng/" target="_blank">Yifan (Evan) Peng</a><sup>1</sup></span>
+                <a href="" target="_blank">Zhanshan Wang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xinbin Cheng</a><sup>2</sup>,</span><br>
+              <span class="author-block">
+                <a href="" target="_blank">Felix Heide</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.eee.hku.hk/~evanpeng/" target="_blank">Yifan (Evan) Peng</a><sup>3</sup></span>
             </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>The University of Hong Kong,<sup>2</sup>Zhejiang University<br><b>Optica, Optica Publishing Group, 2023</b></span>
+                    <span class="author-block"><sup>1</sup>Princeton University,<sup>2</sup>Tongji University,<sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics, 2024</b></span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -81,7 +87,7 @@
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-10-7-959&id=535343" target="_blank"
+                        <a href="" target="_blank"
                         class="external-link button is-normal is-rounded button-color">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -92,7 +98,7 @@
 
                     <!-- Supplementary PDF link -->
                     <span class="link-block">
-                      <a href="https://opg.optica.org/optica/viewmedia.cfm?uri=optica-10-7-959&seq=s001" target="_blank"
+                      <a href="" target="_blank"
                       class="external-link button is-normal is-rounded button-color">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
@@ -103,7 +109,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/whywww/ASASM" target="_blank"
+                    <a href="" target="_blank"
                     class="external-link button is-normal is-rounded button-color">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -155,7 +161,8 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Accurately yet efficiently simulating off-axis diffraction is vital to design large-scale computational optics, but existing rigid sampling and modeling schemes fail to address this. Herein, we establish a universal least-sampling angular spectrum method that enables efficient off-axis diffraction modeling with high accuracy. Specifically, by employing the Fourier transform’s shifting property to convert off-axis diffraction to quasi-on-axis, and by linking the angular spectrum to the transfer function, essential sampling requirements can be thoroughly optimized and adaptively determined across computation. Leveraging a flexible matrix-based Fourier transform, we demonstrate the off-axis point spread function of exemplary coded-aperture imaging systems. For the first time, to our knowledge, a significant speed boost of around 36× over the state of the art at 20° is demonstrated, and so is the viability of computing ultra-large angles such as 35° within seconds on a commercial computer. The applicability to high-frequency modulation is further investigated.
+            Learned optics, which incorporate lightweight diffractive optics, coded-aperture modulation, and specialized image-processing neural networks, have recently garnered attention in the field of snapshot hyperspectral imaging (HSI). While conventional methods typically rely on a single lens element paired with an off-the-shelf color sensor, these setups, despite their widespread availability, present inherent limitations. First, the Bayer sensor's spectral response curves are not optimized for HSI applications, limiting spectral fidelity of the reconstruction. Second, single lens designs rely on a single diffractive optical element (DOE)  to simultaneously encode spectral information and maintain spatial resolution across all wavelengths, which constrains spectral encoding capabilities.
+This work investigates a multi-channel lens array combined with aperture-wise color filters, all co-optimized alongside an image reconstruction network. This configuration enables independent spatial encoding and spectral response for each channel, improving optical encoding across both spatial and spectral dimensions. Specifically, we validate that the method achieves over a 5dB improvement in PSNR for spectral reconstruction compared to existing single-diffractive lens and coded-aperture techniques. Experimental validation further confirmed that the method is capable of recovering up to 31 spectral bands within the 429–700 nm range in diverse indoor and outdoor environments.
           </p>
         </div>
       </div>
@@ -165,10 +172,10 @@
 <div class="hero-body">
   <div class="container">
     <div class="item">
-      <img src="static/images/principles.png" alt="MY ALT TEXT" class="abs-image"/>
+      <!-- <img src="static/images/principles.png" alt="MY ALT TEXT" class="abs-image"/>
       <h2 class="subtitle has-text-centered">
         Diagram of off-axis diffraction.
-      </h2>
+      </h2> -->
     </div>
   </div>
 </div> 
@@ -178,9 +185,9 @@
 
 <section class="section is-compact">
   <div class="container is-max-desktop content">
-    <h2 class="title">Sampling Requirements</h2>
+    <h2 class="title">Method</h2>
       <div class="item">
-        <p>
+        <!-- <p>
           We adopt the angular spectrum method (ASM) as it is a rigorous formulation of off-axis diffraction. An input field with an angular spectrum U has a diffraction field at distance z calculated by:
         </p>
         <img src="static/images/asm.png" class="eq-image"/>
@@ -191,8 +198,8 @@
           <li>With <i>virtual lens model</i>, we calculate a controllable region of band extension as a supplement to the phase gradient analysis;</li>
           <li>With <i>joint component analysis</i>, we combine different components in the same domain to determine the correct sampling rate.</li>
           </ol>
-        </p>
-        <div id="results-carousel" class="carousel results-carousel">
+        </p> -->
+        <!-- <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <img src="static/images/lpc.png" alt="MY ALT TEXT" class="sec-image"/>
             <div class="subtitle has-text-centered">
@@ -211,21 +218,21 @@
               Effect of combined sampling in frequency domain. From left to right, the 1st column is the zoomed view from the right ones. The 2nd ~ 4th ones are the phase of the angular spectrum of an off-axis converging spherical wave with LPC, the shifted transfer function, and the superposition, respectively.
             </div>
           </div>
-        </div>
+        </div> -->
         <p></p>
-        <p>
+        <!-- <p>
           We summarize the complete minimum sampling rates in both domains as:
         </p>
         <img src="static/images/spat.png" class="eq-image"/>
-        <img src="static/images/freq.png" class="eq-image"/>
+        <img src="static/images/freq.png" class="eq-image"/> -->
       </div>
 </section>
 
 <section class="section is-compact">
   <div class="container is-max-desktop content">
-    <h2 class="title">Simulation Results</h2>
+    <h2 class="title">Results</h2>
       <div class="item">
-        <p>
+        <!-- <p>
           The results are compared against a baseline method (Shift-BEASM) and the ground truth (Rayleigh-Sommerfeld Integral).
           Two cases of comparisons are considered:
         </p>
@@ -263,7 +270,7 @@
               The phase of output field at large angles using LS-ASM, Zemax and RS.
             </div>
           </div>
-          </div>
+          </div> -->
       </div>
     </div>
 </section>
@@ -372,16 +379,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @article{Wei:23,
-        title   = {Modeling Off-Axis Diffraction with the Least-Sampling Angular Spectrum Method},
-        author  = {Wei, Haoyu and Liu, Xin and Hao, Xiang and Lam, Edmund Y. and Peng, Yifan},
-        journal = {Optica},
-        volume  = {10}, number = {7}, pages = {959--962},
-        month   = jul,
-        year    = {2023},
-        publisher = {Optica Publishing Group},
-        doi     = {10.1364/OPTICA.490223}
-      }
+      
     </code></pre>
   </div>
 </section>
@@ -394,11 +392,11 @@
     <h2 class="title">Related Projects</h2>
     You may also be interested in related projects in deep optics:
     <ul>
-      <li>Liu et al. Deep Optics Models, Optics Express 2022 (<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-20-36973&id=506502">link</a>)</li>
+      <!-- <li>Liu et al. Deep Optics Models, Optics Express 2022 (<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-20-36973&id=506502">link</a>)</li>
       <li>Ikoma et al. Depth from Defocus, ICCP 2021 (<a href="https://ieeexplore.ieee.org/abstract/document/9466261/">link</a>)</li>
       <li>Dun et al. Rotationally Symmetric Achromat, Optica 2020 (<a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-7-8-913&id=433999">link</a>)</li>
       <li>Metzler et al. Deep Optics for HDR Imaging, CVPR 2020 (<a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Metzler_Deep_Optics_for_Single-Shot_High-Dynamic-Range_Imaging_CVPR_2020_paper.html">link</a>)</li>
-      <li>Peng et al. Neural Holography, ACM ToG 2020 (<a href="https://dl.acm.org/doi/abs/10.1145/3414685.3417802">link</a>)</li>
+      <li>Peng et al. Neural Holography, ACM ToG 2020 (<a href="https://dl.acm.org/doi/abs/10.1145/3414685.3417802">link</a>)</li> -->
     </ul>
   </div>
 </section>
