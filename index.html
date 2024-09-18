@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Learned Multi-aperture Color-coded Optics for Snapshot Hyperspectral Imaging</title>
+  <title>Learned Multi-aperture Color-coded Optics <br> for Snapshot Hyperspectral Imaging</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -75,12 +75,15 @@
               <span class="author-block">
                 <a href="" target="_blank">Felix Heide</a><sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://www.eee.hku.hk/~evanpeng/" target="_blank">Yifan (Evan) Peng</a><sup>3</sup></span>
+                <a href="https://www.eee.hku.hk/~evanpeng/" target="_blank">Yifan (Evan) Peng</a><sup>3,#</sup></span>
             </div>
 
                   <div class="is-size-5 publication-authors">
                     <span class="author-block"><sup>1</sup>Princeton University, <sup>2</sup>Tongji University, <sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics, 2024</b></span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="eql-cntrb">
+                      <small><br><sup>*</sup>Indicates Equal Contribution</small>
+                      <small><sup>#</sup>evanpeng@hku.hk</small>
+                    </span>
                   </div>
 
                   <div class="column has-text-centered">
@@ -193,14 +196,7 @@ This work investigates a multi-channel lens array combined with aperture-wise co
           Learning Multi-Aperture Color-Coded Optics for Snapshot Hyperspectral Imaging.
         </div>
         <!-- <p>where<math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:13.00pt;"><mstyle><mrow><mtable columnspacing="0.1em" columnalign="left" displaystyle="true"><mtr><mtd><mrow><msub><mi>H</mi><mi>z</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>is the propagation function.
-          <p>We propose the Least-Sampling ASM (LS-ASM) that minimizes the sampling requirements in both spatial and frequency domains and unifies the critical sampling rates for all types of input fields. </p>
-          <ol>
-          <li>With <i>linear phase compensation (LPC)</i>, we shift the frequency centers of off-axis wave fields to the origin using the Fourier transform properties;</li>
-          <li>With <i>virtual lens model</i>, we calculate a controllable region of band extension as a supplement to the phase gradient analysis;</li>
-          <li>With <i>joint component analysis</i>, we combine different components in the same domain to determine the correct sampling rate.</li>
-          </ol>
-        </p> -->
-        <!-- <div id="results-carousel" class="carousel results-carousel">
+        <div id="results-carousel" class="carousel results-carousel">
           <div class="item">
             <img src="static/images/lpc.png" alt="MY ALT TEXT" class="sec-image"/>
             <div class="subtitle has-text-centered">
@@ -229,6 +225,66 @@ This work investigates a multi-channel lens array combined with aperture-wise co
       </div>
 </section>
 
+
+<section class="section is-compact">
+  <div class="container is-max-desktop content">
+    <p></p>
+    <h2 class="title">Experimental Results</h2>
+    <p>We validate the proposed system under both outdoor and indoor environments and compare the reconstruction with reference captures obtained from the commercially available Specim IQ hyperspectral camera. 
+      Spectral curves reconstructed by our method closely align with those from the Specim IQ camera, demonstrating exceptional fidelity across 31 channels, further validating our methodology in diverse environments.
+    </p>
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <img src="static/images/experimental1.jpg" alt="MY ALT TEXT" class="abs-image"/>
+        <div class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </div>
+      </div>
+      <div class="item">
+        <img src="static/images/experimental2.jpg" alt="MY ALT TEXT" class="abs-image"/>
+        <div class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </div>
+      </div>
+      <div class="item">
+        <img src="static/images/experimental3.jpg" alt="MY ALT TEXT" class="abs-image"/>
+        <div class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <img src="static/images/experimental1.jpg" alt="MY ALT TEXT" class="abs-image"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/experimental2.jpg" alt="MY ALT TEXT" class="abs-image"/>
+        <h2 class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </h2>
+     </div>
+     <div class="item">
+      <img src="static/images/experimental3.jpg" alt="MY ALT TEXT" class="abs-image"/>
+      <h2 class="subtitle has-text-centered">
+        <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+      </h2>
+   </div>
+  </div>
+</div>
+</div>
+</section> -->
+<!-- End image carousel -->
+
 <section class="section is-compact"></section>
   <div class="container is-max-desktop content">
     <h2 class="title">System Analysis</h2>
@@ -244,46 +300,6 @@ This work investigates a multi-channel lens array combined with aperture-wise co
       </div>
     </div>
 </section>
-
-<section class="section is-compact">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Experimental Results</h2>
-    <p>We validate the proposed system under both outdoor and indoor environments and compare the reconstruction with reference captures obtained from the commercially available Specim IQ hyperspectral camera. 
-      Spectral curves reconstructed by our method closely align with those from the Specim IQ camera, demonstrating exceptional fidelity across 31 channels, further validating our methodology in diverse environments.
-    </p>
-      <div class="item">
-        <img src="static/images/experimental.jpg" alt="MY ALT TEXT" class="body-image"/>
-        <div class="subtitle has-text-centered">
-          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
-        </div>
-      </div>
-    </div>
-</section>
-
-
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-      <div class="item">
-        <img src="static/images/results.png" alt="MY ALT TEXT" class="abs-image"/>
-        <h2 class="subtitle has-text-centered">
-          (a) Visual results of the amplitude (first row) and phase (second row) of the complex PSF, and the amplitude for the angular spectrum (third row) of the input field at 3 degrees. The amplitude of the PSF and the angular spectrum is normalized by respective maxima. In the third row, the red dots denote the center of the angular spectrum. (b) SNR and runtime w.r.t. incident angles. (c) Sampling number w.r.t. incident angles. 
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/uniform-diffuser.png" alt="MY ALT TEXT" class="abs-image"/>
-        <h2 class="subtitle has-text-centered">
-          Complex diffractive fields modulated by random diffusers with uniform distributions within each pixel. Here the phase modulation is wrapped to [0, 2π] for visualization.
-       </h2>
-     </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
-
 
 
 
