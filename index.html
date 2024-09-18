@@ -79,7 +79,7 @@
             </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Princeton University,<sup>2</sup>Tongji University,<sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics, 2024</b></span>
+                    <span class="author-block"><sup>1</sup>Princeton University, <sup>2</sup>Tongji University, <sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics, 2024</b></span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -138,19 +138,16 @@
 
 
 <!-- Teaser video-->
-<!-- <section class="hero teaser">
+<section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+        <img src="static/images/teaser_2024_V5.jpg" alt="MY ALT TEXT" class="abs-image"/>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        We propose a snapshot hyperspectral imager with multi-aperture color-coded optics, illustrated in (a/e), providing customized independent spatial and spectral encoding for different channels, as shown in (f/g). We achieve this by jointly optimizing a DOE array, aperture-wise color filters, and a reconstruction network. This approach exploits the degrees of freedom in optical encoding across both spatial and spectral dimensions, outperforming existing single-lens approaches by over 5 dB PSNR in reconstruction quality. We experimentally validate the proposed method in both indoor and outdoor settings, recovering up to 31 spectral bands within the 429–700 nm range, closely matching the reference captured by a spectral-scan hyperspectral camera, as shown in (b-d).
       </h2>
     </div>
   </div>
-</section> -->
+</section>
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
@@ -169,29 +166,33 @@ This work investigates a multi-channel lens array combined with aperture-wise co
     </div>
   </div>
 </section>
-<div class="hero-body">
+<!-- <div class="hero-body">
   <div class="container">
     <div class="item">
-      <!-- <img src="static/images/principles.png" alt="MY ALT TEXT" class="abs-image"/>
+      <img src="static/images/teaser_2024_V5.png" alt="MY ALT TEXT" class="abs-image"/>
       <h2 class="subtitle has-text-centered">
         Diagram of off-axis diffraction.
-      </h2> -->
+      </h2>
     </div>
   </div>
-</div> 
+</div>  -->
 
 <!-- End paper abstract -->
 
 
 <section class="section is-compact">
   <div class="container is-max-desktop content">
-    <h2 class="title">Method</h2>
+    <p></p>
+    <h2 class="title">System Overview</h2>
       <div class="item">
-        <!-- <p>
-          We adopt the angular spectrum method (ASM) as it is a rigorous formulation of off-axis diffraction. An input field with an angular spectrum U has a diffraction field at distance z calculated by:
+        <p>
+          We jointly optimize the multi-aperture DOE array, aperture-wise color filters, and image reconstruction network using a hybrid loss function. During each forward pass, the ground truth spectral images are first convolved with the PSFs of the DOE array and then multiplied by the response curves of the color filters. Noise is added to the simulated sensor image, which is then integrated over the monochrome sensor's response for each sub-lens channel: B, G1, G2, and R. These images are input into the multi-resolution feature extractor of the image reconstruction network to recover the final hyperspectral (HS) and RGB images.
         </p>
-        <img src="static/images/asm.png" class="eq-image"/>
-        <p>where<math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:13.00pt;"><mstyle><mrow><mtable columnspacing="0.1em" columnalign="left" displaystyle="true"><mtr><mtd><mrow><msub><mi>H</mi><mi>z</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>is the propagation function.
+        <img src="static/images/overview.jpg" class="body-image"/>
+        <div class="subtitle has-text-centered">
+          Learning Multi-Aperture Color-Coded Optics for Snapshot Hyperspectral Imaging.
+        </div>
+        <!-- <p>where<math xmlns="http://www.w3.org/1998/Math/MathML" style="color:rgba(0,0,0,255);color:rgb(0,0,0);font-size:13.00pt;"><mstyle><mrow><mtable columnspacing="0.1em" columnalign="left" displaystyle="true"><mtr><mtd><mrow><msub><mi>H</mi><mi>z</mi></msub></mrow></mtd></mtr></mtable></mrow></mstyle></math>is the propagation function.
           <p>We propose the Least-Sampling ASM (LS-ASM) that minimizes the sampling requirements in both spatial and frequency domains and unifies the critical sampling rates for all types of input fields. </p>
           <ol>
           <li>With <i>linear phase compensation (LPC)</i>, we shift the frequency centers of off-axis wave fields to the origin using the Fourier transform properties;</li>
@@ -219,7 +220,7 @@ This work investigates a multi-channel lens array combined with aperture-wise co
             </div>
           </div>
         </div> -->
-        <p></p>
+        <!-- <p></p> -->
         <!-- <p>
           We summarize the complete minimum sampling rates in both domains as:
         </p>
@@ -228,49 +229,33 @@ This work investigates a multi-channel lens array combined with aperture-wise co
       </div>
 </section>
 
+<section class="section is-compact"></section>
+  <div class="container is-max-desktop content">
+    <h2 class="title">System Analysis</h2>
+    <p>We assess the benefits of the proposed multi-aperture setup by analyzing the performance enhancements from spatial and spectral modulation, as well as the effects of independent versus shared spatial modulation across channels. To this end, we compare the proposed approach to variants using a fixed Bayer RGGB color filter and/or a single shared DOE across all color channels.
+      We observe a noticeable decline in both RGB and hyperspectral reconstruction quality when compared to the proposed multi-aperture configuration.
+      We also confirm that Bayer filters, designed to mimic human visual perception, are not tailored to HSI applications, leading to a performance decline compared to our customized color filter.
+    </p>
+      <div class="item">
+        <img src="static/images/ablation_array.png" alt="MY ALT TEXT" class="sec-image"/>
+        <div class="subtitle has-text-centered">
+          Validation of Multi-Aperture Configuration.
+        </div>
+      </div>
+    </div>
+</section>
+
 <section class="section is-compact">
   <div class="container is-max-desktop content">
-    <h2 class="title">Results</h2>
+    <h2 class="title">Experimental Results</h2>
+    <p>We validate the proposed system under both outdoor and indoor environments and compare the reconstruction with reference captures obtained from the commercially available Specim IQ hyperspectral camera. 
+      Spectral curves reconstructed by our method closely align with those from the Specim IQ camera, demonstrating exceptional fidelity across 31 channels, further validating our methodology in diverse environments.
+    </p>
       <div class="item">
-        <!-- <p>
-          The results are compared against a baseline method (Shift-BEASM) and the ground truth (Rayleigh-Sommerfeld Integral).
-          Two cases of comparisons are considered:
-        </p>
-        <p>
-          In Case 1, where the samples in Shift-BEASM are set to achieve the same level of SNR as LS-ASM, LS-ASM consistently performs at a <b>remarkably short runtime</b> even <b>at large angles</b> (e.g., 20 degrees), outperforming the Shift-BEASM by over 35x.
-          <br>
-          In Case 2, where the samples in Shift-BEASM are set as the same rate as LS-ASM, the baseline yields incorrect results while ours consistantly performs well along all angles.
-        </p>
-        <p>
-          We further extend our discussions to complex and high-frequency input fields in the supplementary, and verify our theory using an example of diffuser modulation. 
-          More results, derivations, and proof are in supplementary.
-        </p>
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item">
-            <img src="static/images/results.png" alt="MY ALT TEXT" class="sec-image-large"/>
-            <div class="subtitle has-text-centered">
-              (a) Visual results of the amplitude (first row) and phase (second row) of the complex PSF, and the amplitude for the angular spectrum (third row) of the input field at 3 degrees. The amplitude of the PSF and the angular spectrum is normalized by respective maxima. In the third row, the red dots denote the center of the angular spectrum. (b) SNR and runtime w.r.t. incident angles. (c) Sampling number w.r.t. incident angles. 
-            </div>
-          </div>
-          <div class="item">
-            <img src="static/images/uniform-diffuser.png" alt="MY ALT TEXT" class="sec-image-large"/>
-            <div class="subtitle has-text-centered">
-              Complex diffractive fields modulated by random diffusers with uniform distributions within each pixel.
-            </div>
-          </div>
-          <div class="item">
-            <img src="static/images/more1.png" alt="MY ALT TEXT" class="sec-image-large"/>
-            <div class="subtitle has-text-centered">
-              The amplitude of output field at large angles using LS-ASM, Zemax and RS.
-            </div>
-          </div>
-          <div class="item">
-            <img src="static/images/more2.png" alt="MY ALT TEXT" class="sec-image-large"/>
-            <div class="subtitle has-text-centered">
-              The phase of output field at large angles using LS-ASM, Zemax and RS.
-            </div>
-          </div>
-          </div> -->
+        <img src="static/images/experimental.jpg" alt="MY ALT TEXT" class="body-image"/>
+        <div class="subtitle has-text-centered">
+          <b>Experimental Assessment.</b> We evaluate the proposed method in both outdoor (Scene 1 and 2) and indoor (Scene 3) environments, comparing it to the commercial Specim IQ hyperspectral camera. For each scene, we include: (a) sensor captures comprising four sub-channel images (R, G1, G2, B); (b/e) RGB reconstructions compared to Specim IQ references; (c/f) close-up views of a cropped region across all 31 channels; and (d) spectral validation plots for four sampled points on the captured scene.
+        </div>
       </div>
     </div>
 </section>
@@ -357,8 +342,6 @@ This work investigates a multi-channel lens array combined with aperture-wise co
 
 
 
-
-
 <!-- Paper poster -->
 <!-- <section class="hero is-small is-light">
   <div class="hero-body">
@@ -392,11 +375,11 @@ This work investigates a multi-channel lens array combined with aperture-wise co
     <h2 class="title">Related Projects</h2>
     You may also be interested in related projects in deep optics:
     <ul>
-      <!-- <li>Liu et al. Deep Optics Models, Optics Express 2022 (<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-20-36973&id=506502">link</a>)</li>
-      <li>Ikoma et al. Depth from Defocus, ICCP 2021 (<a href="https://ieeexplore.ieee.org/abstract/document/9466261/">link</a>)</li>
+      <li>Liu et al. Deep Optics Models, Optics Express 2022 (<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-20-36973&id=506502">link</a>)</li>
+      <!-- <li>Ikoma et al. Depth from Defocus, ICCP 2021 (<a href="https://ieeexplore.ieee.org/abstract/document/9466261/">link</a>)</li> -->
       <li>Dun et al. Rotationally Symmetric Achromat, Optica 2020 (<a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-7-8-913&id=433999">link</a>)</li>
       <li>Metzler et al. Deep Optics for HDR Imaging, CVPR 2020 (<a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Metzler_Deep_Optics_for_Single-Shot_High-Dynamic-Range_Imaging_CVPR_2020_paper.html">link</a>)</li>
-      <li>Peng et al. Neural Holography, ACM ToG 2020 (<a href="https://dl.acm.org/doi/abs/10.1145/3414685.3417802">link</a>)</li> -->
+      <!-- <li>Peng et al. Neural Holography, ACM ToG 2020 (<a href="https://dl.acm.org/doi/abs/10.1145/3414685.3417802">link</a>)</li> -->
     </ul>
   </div>
 </section>
