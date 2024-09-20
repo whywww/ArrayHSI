@@ -79,7 +79,7 @@
             </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>Tongji University, <sup>2</sup>Princeton University, <sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics, ACM Siggraph Asia, 2024</b></span>
+                    <span class="author-block"><sup>1</sup>Tongji University, <sup>2</sup>Princeton University, <sup>3</sup>The University of Hong Kong<br><b>ACM Transactions on Graphics (ACM Siggraph Asia) 2024</b></span>
                     <span class="eql-cntrb">
                       <small><br><sup>*</sup>Indicates Equal Contribution</small>
                       <small><sup>#</sup>evanpeng@hku.hk</small>
@@ -145,7 +145,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
         <img src="static/images/teaser_2024_V5.jpg" alt="MY ALT TEXT" class="abs-image"/>
-      <h2 class="subtitle has-text-centered">
+      <h2 class="subtitle has-text-centered has-text-justified">
         We propose a snapshot hyperspectral imager with multi-aperture color-coded optics, illustrated in (a/e), providing customized independent spatial and spectral encoding for different channels, as shown in (f/g). We achieve this by jointly optimizing a DOE array, aperture-wise color filters, and a reconstruction network. This approach exploits the degrees of freedom in optical encoding across both spatial and spectral dimensions, outperforming existing single-lens approaches by over 5 dB PSNR in reconstruction quality. We experimentally validate the proposed method in both indoor and outdoor settings, recovering up to 31 spectral bands within the 429–700 nm range, closely matching the reference captured by a spectral-scan hyperspectral camera, as shown in (b-d).
       </h2>
     </div>
@@ -187,7 +187,7 @@ This work investigates a multi-channel lens array combined with aperture-wise co
   <div class="container is-max-desktop content">
     <p></p>
     <h2 class="title">System Overview</h2>
-      <div class="item">
+      <div class="item has-text-justified">
         <p>
           We jointly optimize the multi-aperture DOE array, aperture-wise color filters, and image reconstruction network using a hybrid loss function. During each forward pass, the ground truth spectral images are first convolved with the PSFs of the DOE array and then multiplied by the response curves of the color filters. Noise is added to the simulated sensor image, which is then integrated over the monochrome sensor's response for each sub-lens channel: B, G1, G2, and R. These images are input into the multi-resolution feature extractor of the image reconstruction network to recover the final hyperspectral (HS) and RGB images.
         </p>
@@ -227,7 +227,7 @@ This work investigates a multi-channel lens array combined with aperture-wise co
 
 
 <section class="section is-compact">
-  <div class="container is-max-desktop content">
+  <div class="container is-max-desktop content has-text-justified">
     <p></p>
     <h2 class="title">Experimental Results</h2>
     <p>We validate the proposed system under both outdoor and indoor environments and compare the reconstruction with reference captures obtained from the commercially available Specim IQ hyperspectral camera. 
@@ -286,7 +286,7 @@ This work investigates a multi-channel lens array combined with aperture-wise co
 <!-- End image carousel -->
 
 <section class="section is-compact"></section>
-  <div class="container is-max-desktop content">
+  <div class="container is-max-desktop content has-text-justified">
     <h2 class="title">System Analysis</h2>
     <p>We assess the benefits of the proposed multi-aperture setup by analyzing the performance enhancements from spatial and spectral modulation, as well as the effects of independent versus shared spatial modulation across channels. To this end, we compare the proposed approach to variants using a fixed Bayer RGGB color filter and/or a single shared DOE across all color channels.
       We observe a noticeable decline in both RGB and hyperspectral reconstruction quality when compared to the proposed multi-aperture configuration.
@@ -391,11 +391,10 @@ This work investigates a multi-channel lens array combined with aperture-wise co
     <h2 class="title">Related Projects</h2>
     You may also be interested in related projects in deep optics:
     <ul>
+      <li>Wei et al. Modeling Off-Axis Diffraction, Optica 2023 (<a href="https://doi-org.eproxy.lib.hku.hk/10.1364/OPTICA.490223">link</a>)</li>
       <li>Liu et al. Deep Optics Models, Optics Express 2022 (<a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-30-20-36973&id=506502">link</a>)</li>
-      <!-- <li>Ikoma et al. Depth from Defocus, ICCP 2021 (<a href="https://ieeexplore.ieee.org/abstract/document/9466261/">link</a>)</li> -->
       <li>Dun et al. Rotationally Symmetric Achromat, Optica 2020 (<a href="https://opg.optica.org/optica/fulltext.cfm?uri=optica-7-8-913&id=433999">link</a>)</li>
       <li>Metzler et al. Deep Optics for HDR Imaging, CVPR 2020 (<a href="https://openaccess.thecvf.com/content_CVPR_2020/html/Metzler_Deep_Optics_for_Single-Shot_High-Dynamic-Range_Imaging_CVPR_2020_paper.html">link</a>)</li>
-      <!-- <li>Peng et al. Neural Holography, ACM ToG 2020 (<a href="https://dl.acm.org/doi/abs/10.1145/3414685.3417802">link</a>)</li> -->
     </ul>
   </div>
 </section>
